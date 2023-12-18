@@ -1,5 +1,6 @@
 import path from 'path';
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 import connectDB from './config/db.js';
@@ -12,6 +13,13 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
+
+app.use(
+  cors({
+    origin:"http://localhost:3000",
+    methods:["GET","POST","PUT","DELETE"]
+  })
+)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,7 +37,7 @@ if (process.env.NODE_ENV === 'development') {
   );
 } else {
   app.get('/', (req, res) => {
-    res.send('API is running....');
+    res.send('API is running now.....');
   });
 }
 

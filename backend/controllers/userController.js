@@ -150,6 +150,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 });
 export {
   authUser,
+  getUsers,
   registerUser,
   logoutUser,
   getUserProfile,

@@ -41,6 +41,12 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password,
+    emp_code,
+    emp_role,
+    emp_phone,
+    emp_gender,
+    emp_birthday,
+    em_joining_date
   });
 
   if (user) {
@@ -50,6 +56,12 @@ const registerUser = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      emp_code:user.emp_code,
+      emp_role:user.emp_role,
+      emp_phone:user.emp_phone,
+      emp_gender:user.emp_gender,
+      emp_birthday:user.emp_birthday,
+      em_joining_date:user.em_joining_date
     });
   } else {
     res.status(400);

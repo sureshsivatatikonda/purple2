@@ -24,6 +24,21 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc    Auth user & get token
+// @route   POST /api/users/auth
+// @access  Public
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({});
+
+  if (users) {
+    res.json(users)
+    
+  } else {
+    res.status(404);
+    throw new Error('No Data Fround');
+  }
+});
+
 // @desc    Register a new user
 // @route   POST /api/users
 // @access  Public

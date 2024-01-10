@@ -16,6 +16,32 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    emp_id: {
+      type: Number,
+      required: true,
+      unique: true,
+    },
+    emp_code: {
+      type: Number,
+      required: true,
+      unique: true,
+    },
+    emp_role: {
+      type: String,
+      required: true,
+    },
+    emp_gender: {
+      type: String,
+      required: true,
+    },
+    emp_birthday: {
+      type: String,
+      required: true,
+    },
+    em_joining_date: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

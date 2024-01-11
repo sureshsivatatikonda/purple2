@@ -38,6 +38,7 @@ if (process.env.NODE_ENV === 'development') {
   );
 } else {
   app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
     res.send('API is running now.....');
   });
 }

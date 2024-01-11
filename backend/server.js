@@ -17,7 +17,7 @@ const app = express();
 app.use(
   cors({
     // origin:"https://symphonious-piroshki-f63932.netlify.app",
-    origin:"http://localhost:5173",
+    origin:"https://purple.tekmagnus.com",
     methods:["GET","POST","PUT","DELETE"]
   })
 )
